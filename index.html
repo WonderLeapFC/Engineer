@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>WonderLeap — Mission 1: Meet an Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ====== Loading screen ====== -->
+<div class="wonda-loader" id="wonda-loader" role="status" aria-live="polite">
+  <div class="wonda-loader-mascot" id="wonda-loader-mascot" aria-hidden="true"></div>
+  <h2>Loading WONDA…</h2>
+  <div class="wonda-loader-bar"><div class="wonda-loader-fill" id="wonda-loader-fill"></div></div>
+  <p id="wonda-loader-count">Getting ready…</p>
+</div>
+
+<a href="index.html" class="corner-btn home"  id="btn-home"  aria-label="Back to Labs Zone">🏠</a>
+<button class="corner-btn mute"  id="btn-mute"  type="button" aria-label="Mute voice (for grown-ups)">👤</button>
+<button class="corner-btn sound" id="btn-sound" type="button" aria-label="Replay what WONDA said">🔊</button>
+
+<main id="app" aria-label="Engineer mission">
+
+  <!-- ====== SECTION 1 — Mission Start ====== -->
+  <section class="section active" id="sec-1" aria-label="Welcome">
+    <div class="card">
+      <h2>Mission 1</h2>
+      <div class="tools-wrap">
+        <svg class="tools-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A bouncing spanner and cog">
+          <ellipse cx="160" cy="184" rx="120" ry="10" fill="#1A2530" opacity=".18"/>
+          <g transform="translate(95, 95)">
+            <g class="spin-cog">
+              <polygon points="-6,-66 6,-66 12,-50 22,-43 38,-52 50,-38 42,-20 52,-12 56,0 52,12 42,20 50,38 38,52 22,43 12,50 6,66 -6,66 -12,50 -22,43 -38,52 -50,38 -42,20 -52,12 -56,0 -52,-12 -42,-20 -50,-38 -38,-52 -22,-43 -12,-50"
+                       fill="#FFB300" stroke="#1A2530" stroke-width="4" stroke-linejoin="round"/>
+              <circle cx="0" cy="0" r="20" fill="#1A2530"/>
+              <circle cx="0" cy="0" r="7" fill="#FFFFFF"/>
+            </g>
+          </g>
+          <g transform="translate(218, 95) rotate(20)">
+            <rect x="-10" y="-60" width="20" height="120" rx="6" fill="#90A4AE" stroke="#1A2530" stroke-width="4"/>
+            <path d="M -20 -60 Q -20 -78 0 -78 Q 20 -78 20 -60 L 14 -52 L 6 -56 L 6 -42 L -6 -42 L -6 -56 L -14 -52 Z"
+                  fill="#90A4AE" stroke="#1A2530" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M -20 60 Q -20 78 0 78 Q 20 78 20 60 L 14 52 L 6 56 L 6 42 L -6 42 L -6 56 L -14 52 Z"
+                  fill="#90A4AE" stroke="#1A2530" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="-4" cy="0" r="4" fill="#37474F"/>
+            <circle cx="4" cy="0" r="4" fill="#37474F"/>
+          </g>
+        </svg>
+      </div>
+      <p>WONDA is ready to build!</p>
+      <button class="replay-line" id="replay-1" type="button">🔊 Hear it again</button>
+      <div class="btn-row">
+        <button class="btn start" id="btn-start" type="button" aria-label="Start the mission">▶ START</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 2 — What is an Engineer? ====== -->
+  <section class="section" id="sec-2" aria-label="What is an engineer">
+    <div class="card">
+      <h2>What is an Engineer?</h2>
+      <div class="engineer-wrap">
+        <svg class="engineer-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A friendly cartoon engineer wearing a hard hat and tool belt">
+          <ellipse cx="100" cy="232" rx="60" ry="6" fill="#1A2530" opacity=".18"/>
+          <rect x="72" y="170" width="22" height="60" rx="3" fill="#1565C0" stroke="#1A2530" stroke-width="3"/>
+          <rect x="106" y="170" width="22" height="60" rx="3" fill="#1565C0" stroke="#1A2530" stroke-width="3"/>
+          <ellipse cx="83" cy="232" rx="15" ry="5" fill="#37474F" stroke="#1A2530" stroke-width="2"/>
+          <ellipse cx="117" cy="232" rx="15" ry="5" fill="#37474F" stroke="#1A2530" stroke-width="2"/>
+          <rect x="58" y="160" width="84" height="14" fill="#5D4037" stroke="#1A2530" stroke-width="3"/>
+          <rect x="64" y="158" width="6" height="18" fill="#FFB300" stroke="#1A2530" stroke-width="1.5"/>
+          <rect x="126" y="158" width="6" height="18" fill="#90A4AE" stroke="#1A2530" stroke-width="1.5"/>
+          <path d="M 60 96 Q 100 88 140 96 L 144 162 L 56 162 Z" fill="#42A5F5" stroke="#1A2530" stroke-width="3"/>
+          <rect x="58" y="124" width="84" height="6" fill="#FFEB3B" stroke="#1A2530" stroke-width="1.5"/>
+          <rect x="58" y="138" width="84" height="6" fill="#FFEB3B" stroke="#1A2530" stroke-width="1.5"/>
+          <rect x="40" y="100" width="20" height="58" rx="6" fill="#FFCC80" stroke="#1A2530" stroke-width="3"/>
+          <rect x="140" y="100" width="20" height="58" rx="6" fill="#FFCC80" stroke="#1A2530" stroke-width="3"/>
+          <rect x="88" y="82" width="24" height="14" fill="#FFCC80" stroke="#1A2530" stroke-width="2"/>
+          <circle cx="100" cy="64" r="24" fill="#FFCC80" stroke="#1A2530" stroke-width="3"/>
+          <circle cx="92" cy="64" r="3" fill="#1A2530"/>
+          <circle cx="108" cy="64" r="3" fill="#1A2530"/>
+          <path d="M 92 72 Q 100 80 108 72" stroke="#1A2530" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 72 50 Q 100 22 128 50 L 128 60 L 72 60 Z" fill="#FFB300" stroke="#1A2530" stroke-width="3"/>
+          <rect x="92" y="40" width="16" height="8" fill="#FF6F00" stroke="#1A2530" stroke-width="2"/>
+        </svg>
+      </div>
+      <p>Tap the cog below to see it spin! 🔁</p>
+      <svg class="tappable-cog" id="tappable-cog" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tap the cog">
+        <g transform="translate(40, 40)">
+          <g class="spin-cog">
+            <polygon points="-4,-34 4,-34 7,-26 12,-22 22,-27 28,-18 23,-10 30,-4 30,4 23,10 28,18 22,27 12,22 7,26 4,34 -4,34 -7,26 -12,22 -22,27 -28,18 -23,10 -30,4 -30,-4 -23,-10 -28,-18 -22,-27 -12,-22 -7,-26"
+                     fill="#76FF03" stroke="#1A2530" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="0" cy="0" r="10" fill="#1A2530"/>
+            <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
+          </g>
+        </g>
+      </svg>
+      <button class="replay-line" id="replay-2" type="button">🔊 Hear it again</button>
+      <div class="btn-row">
+        <button class="btn next" data-next="3" type="button">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 3 — What do they build? ====== -->
+  <section class="section" id="sec-3" aria-label="What engineers build">
+    <div class="card">
+      <h2>What do they build?</h2>
+      <p>Tap each picture to hear about it!</p>
+      <div class="pic-grid">
+        <button class="pic-card" data-line="They build big strong bridges." data-audio="wonda-eng-build-bridge" type="button" aria-label="They build bridges">
+          <span class="pic-emoji" aria-hidden="true">🌉</span>
+          <span class="pic-label">They build big strong bridges</span>
+        </button>
+        <button class="pic-card" data-line="They design powerful rockets that fly to space." data-audio="wonda-eng-design-rockets" type="button" aria-label="They design rockets that fly to space">
+          <span class="pic-emoji" aria-hidden="true">🚀</span>
+          <span class="pic-label">They design powerful rockets that fly to space</span>
+        </button>
+        <button class="pic-card" data-line="They build cars, trains, and aeroplanes." data-audio="wonda-eng-build-vehicle" type="button" aria-label="They build cars, trains and aeroplanes">
+          <span class="pic-emoji" aria-hidden="true">🚗</span>
+          <span class="pic-label">They build cars, trains, and aeroplanes</span>
+        </button>
+        <button class="pic-card" data-line="They design and build helpful robots and machines." data-audio="wonda-eng-build-robot" type="button" aria-label="They build robots and machines">
+          <span class="pic-emoji" aria-hidden="true">🤖</span>
+          <span class="pic-label">They design helpful robots and machines</span>
+        </button>
+      </div>
+      <button class="replay-line" id="replay-3" type="button">🔊 Hear it again</button>
+      <div class="btn-row">
+        <button class="btn next" data-next="4" type="button">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 4 — How they help (stories) ====== -->
+  <section class="section" id="sec-4" aria-label="How engineers help">
+    <div class="card">
+      <h2>How they help</h2>
+      <p>Tap a story to hear it!</p>
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-scene" aria-hidden="true">🌊 → 🌉</div>
+          <div class="story-label">A bridge for the town</div>
+          <button class="story-btn"
+                  data-line="Look! A big river runs through a town. The engineer designed a strong bridge so people can cross safely. Hooray!"
+                  data-audio="wonda-eng-story-bridge"
+                  type="button">▶️ Hear the story</button>
+        </div>
+        <div class="story-card">
+          <div class="story-scene" aria-hidden="true">🌙 → 🚀</div>
+          <div class="story-label">A rocket to the moon</div>
+          <button class="story-btn"
+                  data-line="Some astronauts wanted to visit the moon. The engineer designed a powerful rocket to take them there, and off it flew up into space!"
+                  data-audio="wonda-eng-story-astronaut"
+                  type="button">▶️ Hear the story</button>
+        </div>
+        <div class="story-card">
+          <div class="story-scene" aria-hidden="true">🏭 → 🤖</div>
+          <div class="story-label">A helpful robot</div>
+          <button class="story-btn"
+                  data-line="A factory needed help making things faster. The engineer designed a clever robot to help — and it worked brilliantly!"
+                  data-audio="wonda-eng-story-robot"
+                  type="button">▶️ Hear the story</button>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn next" data-next="5" type="button">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 5 — Engineer Skills ====== -->
+  <section class="section" id="sec-5" aria-label="Engineer skills">
+    <div class="card">
+      <h2>Engineer Skills ⚡</h2>
+      <p>Tap each badge to hear about it!</p>
+      <div class="skills-grid">
+        <button class="skill-badge" data-line="Thinking. Engineers use their brains to figure out tricky problems!" data-audio="wonda-eng-skill-thinking" type="button" aria-label="Thinking">
+          <span class="skill-sparkle" aria-hidden="true">✨</span>
+          <span class="skill-emoji" aria-hidden="true">🧠</span>
+          <span class="skill-name">Thinking</span>
+        </button>
+        <button class="skill-badge" data-line="Clever. Engineers are quick thinkers who love to learn new things!" data-audio="wonda-eng-skill-clever" type="button" aria-label="Clever">
+          <span class="skill-sparkle" aria-hidden="true">✨</span>
+          <span class="skill-emoji" aria-hidden="true">💡</span>
+          <span class="skill-name">Clever</span>
+        </button>
+        <button class="skill-badge" data-line="Patience. Engineers take their time and keep trying until it works!" data-audio="wonda-eng-skill-patience" type="button" aria-label="Patience">
+          <span class="skill-sparkle" aria-hidden="true">✨</span>
+          <span class="skill-emoji" aria-hidden="true">⏳</span>
+          <span class="skill-name">Patience</span>
+        </button>
+        <button class="skill-badge" data-line="Creative. They love to draw and design new ideas!" data-audio="wonda-eng-skill-creative" type="button" aria-label="Creative">
+          <span class="skill-sparkle" aria-hidden="true">✨</span>
+          <span class="skill-emoji" aria-hidden="true">🎨</span>
+          <span class="skill-name">Creative</span>
+        </button>
+        <button class="skill-badge" data-line="Problem solver. When something is tricky, engineers don't give up — they figure it out!" data-audio="wonda-eng-skill-problemsolvers" type="button" aria-label="Problem solver">
+          <span class="skill-sparkle" aria-hidden="true">✨</span>
+          <span class="skill-emoji" aria-hidden="true">🧩</span>
+          <span class="skill-name">Problem Solver</span>
+        </button>
+      </div>
+      <div class="btn-row">
+        <button class="btn next" data-next="skills" type="button">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 5b — Skills SELF-ASSESSMENT ====== -->
+  <section class="section" id="sec-skills" aria-label="Which skills did you use?">
+    <div class="card">
+      <h2>Which skills did YOU use? ✨</h2>
+      <p>Tap the ones that feel like YOU. You can pick more than one!</p>
+      <div class="tick-grid" id="skills-tick-grid">
+        <button class="tick-card" type="button" data-skill="thinking"        aria-label="I used thinking — tap to tick">
+          <span class="tick-mark" aria-hidden="true">✓</span>
+          <span class="tick-emoji" aria-hidden="true">🧠</span>
+          <span class="tick-name">Thinking</span>
+        </button>
+        <button class="tick-card" type="button" data-skill="clever"          aria-label="I was clever — tap to tick">
+          <span class="tick-mark" aria-hidden="true">✓</span>
+          <span class="tick-emoji" aria-hidden="true">💡</span>
+          <span class="tick-name">Clever</span>
+        </button>
+        <button class="tick-card" type="button" data-skill="patience"        aria-label="I had patience — tap to tick">
+          <span class="tick-mark" aria-hidden="true">✓</span>
+          <span class="tick-emoji" aria-hidden="true">⏳</span>
+          <span class="tick-name">Patience</span>
+        </button>
+        <button class="tick-card" type="button" data-skill="creative"        aria-label="I was creative — tap to tick">
+          <span class="tick-mark" aria-hidden="true">✓</span>
+          <span class="tick-emoji" aria-hidden="true">🎨</span>
+          <span class="tick-name">Creative</span>
+        </button>
+        <button class="tick-card" type="button" data-skill="problemsolvers"  aria-label="I solved problems — tap to tick">
+          <span class="tick-mark" aria-hidden="true">✓</span>
+          <span class="tick-emoji" aria-hidden="true">🧩</span>
+          <span class="tick-name">Problem Solver</span>
+        </button>
+      </div>
+      <div class="tick-done-row">
+        <button class="tick-done" id="skills-done-btn" type="button" aria-label="Done — go to the bridge game">✓ Done!</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 6 — Build the Bridge mini-game ====== -->
+  <section class="section" id="sec-6" aria-label="Build the bridge mini-game">
+    <div class="card">
+      <h2>Build a Bridge! 🌉</h2>
+      <p>Drag the right pieces across the river.</p>
+      <div class="build-stage">
+        <div class="build-river" id="build-river" aria-label="River with two banks">
+          <div class="label">🌊 The river</div>
+          <svg class="build-river-svg" id="build-river-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <rect width="320" height="120" fill="#B3E5FC"/>
+            <circle cx="280" cy="34" r="18" fill="#FFD54F" stroke="#F57F17" stroke-width="2"/>
+            <rect x="0" y="120" width="90" height="80" fill="#7BC95F" stroke="#558B2F" stroke-width="2"/>
+            <rect x="0" y="135" width="90" height="65" fill="#A47148" stroke="#5D4037" stroke-width="1.5"/>
+            <rect x="0" y="120" width="90" height="18" fill="#7BC95F" stroke="#558B2F" stroke-width="2"/>
+            <rect x="230" y="120" width="90" height="80" fill="#7BC95F" stroke="#558B2F" stroke-width="2"/>
+            <rect x="230" y="135" width="90" height="65" fill="#A47148" stroke="#5D4037" stroke-width="1.5"/>
+            <rect x="230" y="120" width="90" height="18" fill="#7BC95F" stroke="#558B2F" stroke-width="2"/>
+            <rect x="90" y="120" width="140" height="80" fill="#2196F3" stroke="#0D47A1" stroke-width="1.5"/>
+            <g stroke="#FFFFFF" stroke-width="2" fill="none" opacity=".55">
+              <path d="M 100 140 Q 120 134 140 140 T 180 140 T 220 140"/>
+              <path d="M 100 158 Q 120 152 140 158 T 180 158 T 220 158"/>
+              <path d="M 100 176 Q 120 170 140 176 T 180 176 T 220 176"/>
+            </g>
+            <g id="bridge-placeholder">
+              <rect x="90" y="118" width="140" height="6" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="6 4" opacity=".75"/>
+            </g>
+            <g id="bridge-complete" style="display:none;">
+              <rect x="90" y="114" width="140" height="14" fill="#90A4AE" stroke="#1A2530" stroke-width="3"/>
+              <rect x="92" y="106" width="3" height="10" fill="#1A2530"/>
+              <rect x="225" y="106" width="3" height="10" fill="#1A2530"/>
+              <line x1="90" y1="106" x2="230" y2="106" stroke="#37474F" stroke-width="2.5"/>
+              <line x1="100" y1="106" x2="100" y2="114" stroke="#37474F" stroke-width="2"/>
+              <line x1="140" y1="106" x2="140" y2="114" stroke="#37474F" stroke-width="2"/>
+              <line x1="180" y1="106" x2="180" y2="114" stroke="#37474F" stroke-width="2"/>
+              <line x1="220" y1="106" x2="220" y2="114" stroke="#37474F" stroke-width="2"/>
+            </g>
+            <text id="person-walking" x="-30" y="112" font-size="22"
+                  text-anchor="middle" opacity="0" aria-hidden="true">🚶</text>
+          </svg>
+          <div class="build-loaded empty" id="build-loaded" aria-live="polite"></div>
+        </div>
+        <div class="build-items">
+          <div class="label">Pick the right pieces ↓</div>
+          <div class="item-grid" id="build-item-grid">
+            <button class="build-item" data-emoji="🪵" data-correct="1" data-name="plank"  aria-label="Wooden plank"  type="button">🪵</button>
+            <button class="build-item" data-emoji="🧱" data-correct="1" data-name="bricks" aria-label="Sturdy bricks" type="button">🧱</button>
+            <button class="build-item" data-emoji="🔩" data-correct="1" data-name="bolts"  aria-label="Metal bolts"   type="button">🔩</button>
+            <button class="build-item" data-emoji="🍌" data-correct="0" data-name="banana" aria-label="Banana"        type="button">🍌</button>
+            <button class="build-item" data-emoji="🧸" data-correct="0" data-name="teddy"  aria-label="Teddy bear"    type="button">🧸</button>
+            <button class="build-item" data-emoji="🍰" data-correct="0" data-name="cake"   aria-label="Cake"          type="button">🍰</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="replay-line" id="replay-6" type="button">🔊 Hear it again</button>
+        <button class="btn" id="build-replay" type="button" style="background:#FFCDD2; border-color:#E53935; box-shadow:0 6px 0 #E53935; display:none;">▶️ Play again</button>
+        <button class="btn next" id="build-next" data-next="7" type="button" style="display:none;">Next ➡️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 7 — Quiz ====== -->
+  <section class="section" id="sec-7" aria-label="Engineer quiz">
+    <div class="quiz-card">
+      <h2>Engineer Quiz! 🎯</h2>
+      <div class="quiz-progress" id="quiz-progress" aria-hidden="true">
+        <div class="qp-dot current"></div>
+        <div class="qp-dot"></div>
+        <div class="qp-dot"></div>
+      </div>
+      <div class="quiz-question" id="quiz-question" aria-live="polite">…</div>
+      <div class="quiz-options" id="quiz-options"></div>
+      <div class="btn-row">
+        <button class="replay-line" id="quiz-replay" type="button">🔊 Hear the question again</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 8 — Mission Complete ====== -->
+  <section class="section" id="sec-8" aria-label="Mission complete">
+    <div class="card">
+      <h2>Mission Complete! 🎉</h2>
+      <div class="certificate" id="certificate">
+        <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" fill="#76FF03" stroke="#1565C0" stroke-width="5"/>
+          <circle cx="60" cy="60" r="40" fill="#FFFFFF" stroke="#1565C0" stroke-width="3"/>
+          <text x="60" y="56" text-anchor="middle" font-family="Fredoka,sans-serif" font-size="13" font-weight="700" fill="#1565C0">FUTURE</text>
+          <text x="60" y="72" text-anchor="middle" font-family="Fredoka,sans-serif" font-size="13" font-weight="700" fill="#1565C0">ENGINEER</text>
+          <g transform="translate(60, 24)">
+            <polygon points="-3,-10 3,-10 4,-7 7,-5 11,-7 13,-3 11,1 13,5 11,9 7,11 4,11 3,14 -3,14 -4,11 -7,11 -11,9 -13,5 -11,1 -13,-3 -11,-7 -7,-5 -4,-7" fill="#76FF03" stroke="#1565C0" stroke-width="1.5"/>
+            <circle cx="0" cy="2" r="3" fill="#1565C0"/>
+          </g>
+        </svg>
+        <h3>Certificate of Building</h3>
+        <p class="award-text">This certifies that</p>
+        <div class="hero-name-display" id="hero-name-display">Little Engineer</div>
+        <p class="award-text">has completed the<br><strong>Engineer Mission</strong></p>
+        <p style="font-size:14px; color:#607D8B; margin-top:8px;">A WonderLeap STEM &amp; Future Tech Labs Adventure</p>
+      </div>
+      <div class="name-input-wrap">
+        <label for="hero-name-input">👨‍👩‍👧 Grown-ups: type the engineer's name here</label>
+        <input type="text" id="hero-name-input" maxlength="24" placeholder="Type a name…" autocomplete="off" />
+      </div>
+      <div class="btn-row">
+        <button class="btn"  id="btn-print"   type="button">🖨️ Print my certificate</button>
+        <button class="btn"  id="btn-report"  type="button">📄 Save my report</button>
+        <button class="btn"  id="btn-replay-mission" type="button">↻ Do it again</button>
+        <button class="btn next" id="btn-home-2" type="button">🏠 Back to Labs Zone</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ====== Grown-up corner ====== -->
+<div class="grown-up-corner">
+  <button class="grown-up-toggle" id="grown-up-toggle" type="button" aria-expanded="false" aria-controls="grown-up-body">
+    <span>👨‍👩‍👧 For grown-ups</span>
+    <span class="arrow">▾</span>
+  </button>
+  <div class="grown-up-body" id="grown-up-body">
+    <h4>What your child has learned</h4>
+    <ul>
+      <li>Engineers use science, maths and creative thinking to solve problems and build things that help people.</li>
+      <li>They build bridges, houses, vehicles, robots and lots of useful machines.</li>
+      <li>Engineers are clever, creative, work in teams, and don't give up.</li>
+    </ul>
+    <h4>Questions to ask afterwards</h4>
+    <ul>
+      <li>What's something an engineer might build for our town?</li>
+      <li>If you were an engineer, what tricky problem would you solve?</li>
+      <li>Can you draw an invention for me?</li>
+    </ul>
+    <h4>Try this together</h4>
+    <ul>
+      <li>Build a bridge from blocks, books or LEGO and walk a toy car across.</li>
+      <li>Make a den or simple shelter from sofa cushions — talk about "what holds it up?".</li>
+      <li>Take apart an old broken toy together (safely) to peek inside.</li>
+      <li>Visit a building site or look at a bridge on a walk — point out the structures.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ====== Confidence self-assessment overlay (before + after) ====== -->
+<div class="confidence-overlay" id="confidence-overlay" role="dialog" aria-label="Confidence question">
+  <div class="confidence-card">
+    <div class="conf-emoji" aria-hidden="true">🤔</div>
+    <h2 id="confidence-title">Do you know what an engineer is and what they do?</h2>
+    <p>Tap your answer below.</p>
+    <div class="confidence-btns">
+      <button class="confidence-btn yes" id="confidence-yes" type="button" aria-label="YES">
+        <span class="emoji" aria-hidden="true">👍</span>
+        <span class="label">YES</span>
+      </button>
+      <button class="confidence-btn no" id="confidence-no" type="button" aria-label="NO">
+        <span class="emoji" aria-hidden="true">👎</span>
+        <span class="label">NO</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== WONDA mascot ====== -->
+<div class="wonda-corner">
+  <div class="wonda-svg-wrap" id="wonda-svg-wrap" role="img" aria-label="WONDA the mascot — tap to hear me again"></div>
+  <div class="wonda-bubble" id="wonda-bubble" aria-live="polite" aria-atomic="true">Hi!</div>
+</div>
+
+<script src="js/hmac-bridge.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
